@@ -944,8 +944,8 @@ export default function Index() {
           {/* Chairman profile */}
           <div className="fade-up mb-20 border border-border p-8 md:p-12 grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
             <div className="md:col-span-1 flex md:flex-col items-center justify-center">
-              <div className="w-16 h-16 rounded-full flex items-center justify-center text-2xl font-display font-light text-charcoal" style={{ background: "linear-gradient(135deg, #C9933A, #B87C4A)" }}>
-                НФ
+              <div className="w-20 h-20 rounded-full overflow-hidden border-2" style={{ borderColor: "#C9933A" }}>
+                <img src="https://cdn.poehali.dev/projects/dd8c2efa-c3a6-4b6b-81e1-68bd8c4e46fc/files/6b8f8fb8-5cf0-48b4-b9e2-fa4f3f00bf04.jpg" alt="Николя Франсуа" className="w-full h-full object-cover" />
               </div>
             </div>
             <div className="md:col-span-5 border-l border-border pl-8">
