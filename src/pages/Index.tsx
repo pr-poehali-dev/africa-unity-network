@@ -218,6 +218,39 @@ const ROADMAP = [
   },
 ];
 
+const GOALS = [
+  {
+    number: "01",
+    title: "Доверие как фундамент",
+    color: "#C9933A",
+    text: "Все партнёрства, сделки и производственные соглашения AFRIC 4 MATIC строятся на прозрачности, взаимном уважении и долгосрочных обязательствах. Доверие — не декларация, а операционный принцип на каждом уровне цепочки.",
+  },
+  {
+    number: "02",
+    title: "Экономический суверенитет Африки",
+    color: "#7CB87C",
+    text: "Цель компании — создать условия, при которых африканские страны производят, а не только потребляют. Пять региональных узлов формируют самодостаточную индустриальную экосистему, снижающую зависимость от импорта.",
+  },
+  {
+    number: "03",
+    title: "Создание рабочих мест и передача знаний",
+    color: "#4A90B8",
+    text: "Приоритет — местные инженеры, диаспора и молодые специалисты. Каждый производственный узел становится центром компетенций, где международный опыт передаётся и укореняется на континенте.",
+  },
+  {
+    number: "04",
+    title: "Устойчивая доходность для инвесторов",
+    color: "#9B7EC8",
+    text: "Модель концентрации риска в первые 7 лет обеспечивает надёжную базу для стабильной прибыли с 8-го года. Долгосрочная перспектива привлекательна для институциональных и стратегических партнёров.",
+  },
+  {
+    number: "05",
+    title: "Единый голос на международных рынках",
+    color: "#B87C4A",
+    text: "Пять региональных марок под зонтичным брендом AFRIC 4 MATIC выходят на мировые рынки с единой стратегией качества. Континентальная инженерия говорит одним голосом — убедительным и профессиональным.",
+  },
+];
+
 function AfricaMap({ onRegionClick, activeRegion }: { onRegionClick: (id: string) => void; activeRegion: string | null }) {
   return (
     <svg viewBox="0 50 500 450" className="w-full max-w-lg mx-auto" style={{ filter: "drop-shadow(0 0 40px rgba(201,147,58,0.08))" }}>
@@ -361,6 +394,7 @@ export default function Index() {
           <div className="hidden md:flex items-center gap-8">
             {[
               { label: "О бренде", id: "about" },
+              { label: "Цели", id: "goals" },
               { label: "Партнёры", id: "partners" },
               { label: "Регионы", id: "regions" },
               { label: "Логотипы", id: "logos" },
@@ -457,6 +491,41 @@ export default function Index() {
               <div key={stat.num} className="flex items-center gap-8 py-7 border-b border-border last:border-0">
                 <span className="font-display text-5xl text-gold font-light w-24 shrink-0">{stat.num}</span>
                 <span className="font-body text-mist text-sm">{stat.label}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Goals */}
+      <section id="goals" className="py-32 px-8">
+        <div className="max-w-6xl mx-auto">
+          <div className="fade-up mb-16">
+            <p className="font-body text-xs tracking-[0.3em] text-gold mb-4">ЦЕЛИ КОМПАНИИ</p>
+            <h2 className="font-display text-5xl font-light text-sand">
+              Основаны на<br /><em className="text-gold not-italic">доверии и росте</em>
+            </h2>
+            <p className="font-display text-lg font-light mt-4" style={{ color: "rgba(201,147,58,0.6)" }}>
+              Vision · Impact · And Future Growth
+            </p>
+          </div>
+
+          <div className="space-y-px bg-border">
+            {GOALS.map((goal, i) => (
+              <div
+                key={goal.number}
+                className="bg-background grid grid-cols-1 md:grid-cols-12 gap-0 fade-up hover:bg-card transition-colors duration-300"
+                style={{ transitionDelay: `${i * 0.1}s` }}
+              >
+                <div className="md:col-span-1 p-6 md:p-8 flex md:flex-col items-center md:items-start gap-4 md:gap-0 border-b md:border-b-0 md:border-r border-border">
+                  <span className="font-display text-4xl font-light" style={{ color: goal.color }}>{goal.number}</span>
+                </div>
+                <div className="md:col-span-4 p-6 md:p-8 flex items-center border-b md:border-b-0 md:border-r border-border">
+                  <h3 className="font-display text-2xl text-sand font-light leading-snug">{goal.title}</h3>
+                </div>
+                <div className="md:col-span-7 p-6 md:p-8 flex items-center">
+                  <p className="font-body text-sm text-mist leading-relaxed">{goal.text}</p>
+                </div>
               </div>
             ))}
           </div>
