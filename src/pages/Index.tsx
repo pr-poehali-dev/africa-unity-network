@@ -58,6 +58,24 @@ const REGIONS = [
   },
 ];
 
+const FINANCE_MODEL = [
+  { year: 1,  label: "2028", phase: "risk",   return: 0,   desc: "Запуск производства" },
+  { year: 2,  label: "2029", phase: "risk",   return: 0,   desc: "Масштабирование" },
+  { year: 3,  label: "2030", phase: "risk",   return: 0,   desc: "Охват регионов" },
+  { year: 4,  label: "2031", phase: "risk",   return: 0,   desc: "Выход на рынки" },
+  { year: 5,  label: "2032", phase: "risk",   return: 0,   desc: "Укрепление сети" },
+  { year: 6,  label: "2033", phase: "risk",   return: 0,   desc: "Оптимизация цепочки" },
+  { year: 7,  label: "2034", phase: "risk",   return: 0,   desc: "Завершение инвестиций" },
+  { year: 8,  label: "2035", phase: "profit", return: 2,   desc: "Первая прибыль" },
+  { year: 9,  label: "2036", phase: "profit", return: 3,   desc: "Рост доходности" },
+  { year: 10, label: "2037", phase: "profit", return: 3,   desc: "" },
+  { year: 11, label: "2038", phase: "profit", return: 3,   desc: "" },
+  { year: 12, label: "2039", phase: "profit", return: 3,   desc: "" },
+  { year: 13, label: "2040", phase: "profit", return: 3,   desc: "" },
+  { year: 14, label: "2041", phase: "profit", return: 3,   desc: "" },
+  { year: 15, label: "2042", phase: "profit", return: 3,   desc: "Зрелый рынок" },
+];
+
 const PARTNERS = [
   {
     name: "Африканский банк развития",
@@ -489,6 +507,101 @@ export default function Index() {
               {PARTNERS.map((p) => (
                 <span key={p.abbr} className="font-body text-xs" style={{ color: p.color }}>{p.abbr}</span>
               ))}
+            </div>
+          </div>
+
+          {/* Finance Model */}
+          <div className="mt-24 fade-up">
+            <div className="mb-10">
+              <p className="font-body text-xs tracking-[0.3em] text-gold mb-4">ФИНАНСОВАЯ МОДЕЛЬ</p>
+              <h3 className="font-display text-4xl font-light text-sand">
+                7 лет концентрации риска —<br /><em className="text-gold not-italic">прибыль с 8-го года</em>
+              </h3>
+            </div>
+
+            {/* Summary cards */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-12">
+              <div className="p-6 border border-border">
+                <p className="font-body text-xs tracking-widest text-mist uppercase mb-3">Период риска</p>
+                <p className="font-display text-5xl text-sand font-light">7 <span className="text-2xl">лет</span></p>
+                <p className="font-body text-xs text-mist mt-2">2028 — 2034 · Инвестиционная фаза</p>
+              </div>
+              <div className="p-6 border" style={{ borderColor: "rgba(201,147,58,0.35)", background: "rgba(201,147,58,0.05)" }}>
+                <p className="font-body text-xs tracking-widest text-gold uppercase mb-3">Первая прибыль</p>
+                <p className="font-display text-5xl text-gold font-light">2% <span className="font-body text-xl text-mist">/ год</span></p>
+                <p className="font-body text-xs text-mist mt-2">8-й год · 2035</p>
+              </div>
+              <div className="p-6 border" style={{ borderColor: "rgba(124,184,124,0.35)", background: "rgba(124,184,124,0.05)" }}>
+                <p className="font-body text-xs tracking-widest uppercase mb-3" style={{ color: "#7CB87C" }}>Стабильная доходность</p>
+                <p className="font-display text-5xl font-light" style={{ color: "#7CB87C" }}>3% <span className="font-body text-xl text-mist">/ год</span></p>
+                <p className="font-body text-xs text-mist mt-2">9–15-й год · 2036–2042</p>
+              </div>
+            </div>
+
+            {/* Timeline chart */}
+            <div className="overflow-x-auto pb-4">
+              <div className="min-w-[700px]">
+                {/* Bar chart */}
+                <div className="flex items-end gap-1 h-32 mb-2">
+                  {FINANCE_MODEL.map((item) => (
+                    <div key={item.year} className="flex-1 flex flex-col items-center justify-end gap-1">
+                      {item.return > 0 && (
+                        <span className="font-body text-xs font-medium" style={{ color: item.return === 2 ? "#C9933A" : "#7CB87C" }}>
+                          {item.return}%
+                        </span>
+                      )}
+                      <div
+                        className="w-full rounded-sm transition-all duration-500"
+                        style={{
+                          height: item.phase === "risk" ? "100%" : item.return === 2 ? "40%" : "60%",
+                          background: item.phase === "risk"
+                            ? "rgba(160,74,74,0.25)"
+                            : item.return === 2
+                              ? "rgba(201,147,58,0.5)"
+                              : "rgba(124,184,124,0.5)",
+                          border: `1px solid ${item.phase === "risk" ? "rgba(160,74,74,0.4)" : item.return === 2 ? "rgba(201,147,58,0.6)" : "rgba(124,184,124,0.6)"}`,
+                        }}
+                      />
+                    </div>
+                  ))}
+                </div>
+
+                {/* Year labels */}
+                <div className="flex gap-1">
+                  {FINANCE_MODEL.map((item) => (
+                    <div key={item.year} className="flex-1 text-center">
+                      <p className="font-body text-xs text-mist">{item.label}</p>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Phase labels */}
+                <div className="flex gap-1 mt-1">
+                  {FINANCE_MODEL.map((item) => (
+                    <div key={item.year} className="flex-1 text-center">
+                      <p className="font-body text-xs" style={{ color: item.phase === "risk" ? "rgba(160,74,74,0.7)" : item.return === 2 ? "rgba(201,147,58,0.7)" : "rgba(124,184,124,0.7)" }}>
+                        {item.year}г
+                      </p>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Legend */}
+                <div className="flex gap-8 mt-6">
+                  <div className="flex items-center gap-2">
+                    <div className="w-4 h-3 rounded-sm" style={{ background: "rgba(160,74,74,0.35)", border: "1px solid rgba(160,74,74,0.5)" }} />
+                    <span className="font-body text-xs text-mist">Концентрация риска (1–7 лет)</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <div className="w-4 h-3 rounded-sm" style={{ background: "rgba(201,147,58,0.5)", border: "1px solid rgba(201,147,58,0.6)" }} />
+                    <span className="font-body text-xs text-mist">Прибыль 2% (8-й год)</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <div className="w-4 h-3 rounded-sm" style={{ background: "rgba(124,184,124,0.5)", border: "1px solid rgba(124,184,124,0.6)" }} />
+                    <span className="font-body text-xs text-mist">Прибыль 3% (9–15 лет)</span>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
