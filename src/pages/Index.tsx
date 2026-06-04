@@ -224,7 +224,7 @@ export default function Index() {
               <div className="absolute inset-0 border border-gold rounded-full" />
               <div className="absolute inset-1.5 bg-gold rounded-full" />
             </div>
-            <span className="font-display text-lg tracking-widest text-sand">AFRIMOT<span className="text-gold">OR</span></span>
+            <span className="font-display text-lg tracking-widest text-sand">AFRIC 4 <span className="text-gold">MATIC</span></span>
           </div>
           <div className="hidden md:flex items-center gap-8">
             {[
@@ -535,9 +535,9 @@ export default function Index() {
               <div className="absolute inset-0 border border-gold rounded-full" />
               <div className="absolute inset-1 bg-gold rounded-full" />
             </div>
-            <span className="font-display text-base tracking-widest text-sand">AFRIMOT<span className="text-gold">OR</span></span>
+            <span className="font-display text-base tracking-widest text-sand">AFRIC 4 <span className="text-gold">MATIC</span></span>
           </div>
-          <p className="font-body text-xs text-mist tracking-widest">CONTINENTAL AUTOMOTIVE NETWORK · 2025–2030</p>
+          <p className="font-body text-xs text-mist tracking-widest">AFRIC 4 MATIC · CONTINENTAL AUTOMOTIVE NETWORK · 2025–2030</p>
           <p className="font-body text-xs text-mist/50">От локальных инициатив к континентальной сети</p>
         </div>
       </footer>
