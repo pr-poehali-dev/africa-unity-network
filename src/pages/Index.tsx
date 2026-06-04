@@ -940,6 +940,48 @@ export default function Index() {
       {/* Contact */}
       <section id="contact" className="py-32 px-8 bg-card">
         <div className="max-w-6xl mx-auto">
+
+          {/* Chairman profile */}
+          <div className="fade-up mb-20 border border-border p-8 md:p-12 grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
+            <div className="md:col-span-1 flex md:flex-col items-center justify-center">
+              <div className="w-16 h-16 rounded-full flex items-center justify-center text-2xl font-display font-light text-charcoal" style={{ background: "linear-gradient(135deg, #C9933A, #B87C4A)" }}>
+                НФ
+              </div>
+            </div>
+            <div className="md:col-span-5 border-l border-border pl-8">
+              <p className="font-body text-xs tracking-[0.3em] text-gold mb-3">ПРЕДСЕДАТЕЛЬ ПРОЕКТА</p>
+              <h3 className="font-display text-3xl font-light text-sand mb-1">Николя Франсуа</h3>
+              <p className="font-body text-sm text-mist mb-4">AFRIC 4 MATIC</p>
+              <a href="mailto:somgabitchoga-2024@yandex.ru" className="font-body text-sm text-gold hover:underline tracking-wide">
+                somgabitchoga-2024@yandex.ru
+              </a>
+            </div>
+            <div className="md:col-span-6 border-l border-border pl-8">
+              <p className="font-body text-xs tracking-[0.3em] text-gold mb-4">ПРОФИЛЬ</p>
+              <div className="space-y-3">
+                {[
+                  { icon: "🎓", label: "Аспирантура", desc: "Диплом об окончании аспирантуры" },
+                  { icon: "🔬", label: "Исследователь", desc: "Экономическое управление, региональная экономика и маркетинг" },
+                  { icon: "📘", label: "Преподаватель", desc: "Академический опыт и передача знаний" },
+                  { icon: "🌍", label: "Регионы интереса", desc: "Центр · Север · Юг · Восток · Запад" },
+                ].map((item) => (
+                  <div key={item.label} className="flex gap-3 items-start">
+                    <span className="text-base mt-0.5">{item.icon}</span>
+                    <div>
+                      <span className="font-body text-xs text-sand font-medium">{item.label} — </span>
+                      <span className="font-body text-xs text-mist">{item.desc}</span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+              <div className="mt-5 pt-5 border-t border-border">
+                <p className="font-display text-sm font-light text-mist italic leading-relaxed">
+                  "The vision of a researcher on economic management, regional economics and marketing"
+                </p>
+              </div>
+            </div>
+          </div>
+
           <div className="max-w-2xl fade-up">
             <p className="font-body text-xs tracking-[0.3em] text-gold mb-6">КОНТАКТ</p>
             <h2 className="font-display text-5xl font-light text-sand mb-8 leading-tight">
