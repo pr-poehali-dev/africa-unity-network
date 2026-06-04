@@ -390,15 +390,21 @@ export default function Index() {
         <div className="relative z-10 max-w-6xl mx-auto px-8 pt-24 pb-16 grid grid-cols-1 lg:grid-cols-2 gap-16 items-center w-full">
           <div>
             <p className="font-body text-xs tracking-[0.3em] text-gold mb-8 animate-fade-in" style={{ animationDelay: "0.2s" }}>
-              AFRICA · 2025–2030
+              AFRICA · 2025–2035
             </p>
             <h1 className="font-display text-6xl lg:text-7xl font-light leading-tight text-sand mb-6 animate-fade-in" style={{ animationDelay: "0.4s" }}>
               От местных<br />
               <em className="text-gold not-italic">мастерских</em><br />
               к холдингу
             </h1>
-            <div className="h-px bg-gold mb-8 animate-fade-in" style={{ animationDelay: "0.6s", width: "80px" }} />
-            <p className="font-body text-mist text-base leading-relaxed max-w-md animate-fade-in" style={{ animationDelay: "0.8s" }}>
+            <div className="h-px bg-gold mb-6 animate-fade-in" style={{ animationDelay: "0.6s", width: "80px" }} />
+            <p
+              className="font-display text-xl font-light tracking-[0.18em] animate-fade-in mb-6"
+              style={{ animationDelay: "0.7s", color: "rgba(201,147,58,0.85)" }}
+            >
+              VISION · IMPACT · AND FUTURE GROWTH
+            </p>
+            <p className="font-body text-mist text-base leading-relaxed max-w-md animate-fade-in" style={{ animationDelay: "0.9s" }}>
               Единый бренд объединяет пять регионов Африки в цепочку производственной ценности — от шин Севера до рынков Юга.
             </p>
             <div className="flex gap-4 mt-10 animate-fade-in" style={{ animationDelay: "1s" }}>
@@ -905,7 +911,7 @@ export default function Index() {
             <span className="font-display text-base tracking-widest text-sand">AFRIC 4 <span className="text-gold">MATIC</span></span>
           </div>
           <p className="font-body text-xs text-mist tracking-widest">AFRIC 4 MATIC · CONTINENTAL AUTOMOTIVE NETWORK · 2025–2035</p>
-          <p className="font-body text-xs text-mist/50">От локальных инициатив к континентальной сети</p>
+          <p className="font-display text-sm italic" style={{ color: "rgba(201,147,58,0.5)" }}>Vision · Impact · And Future Growth</p>
         </div>
       </footer>
     </div>
