@@ -58,6 +58,57 @@ const REGIONS = [
   },
 ];
 
+const PARTNERS = [
+  {
+    name: "Африканский банк развития",
+    abbr: "AfDB",
+    color: "#C9933A",
+    flag: "🌍",
+    role: "Основной континентальный институт",
+    desc: "Финансирование инфраструктурных и производственных проектов на континенте. Приоритетный партнёр для запуска региональных узлов.",
+  },
+  {
+    name: "Банки России",
+    abbr: "RU",
+    color: "#4A90B8",
+    flag: "🇷🇺",
+    role: "Промышленное финансирование",
+    desc: "Финансирование трансфера технологий, поставок оборудования и партнёрских программ в рамках российско-африканского сотрудничества.",
+  },
+  {
+    name: "Исламские банки",
+    abbr: "IB",
+    color: "#7CB87C",
+    flag: "☪️",
+    role: "Исламское финансирование",
+    desc: "Структуры без процентного финансирования (мурабаха, иджара) для партнёров в Северной и Западной Африке.",
+  },
+  {
+    name: "Международный валютный фонд",
+    abbr: "IMF",
+    color: "#9B7EC8",
+    flag: "🏛️",
+    role: "Макроэкономическая поддержка",
+    desc: "Программы поддержки индустриализации и укрепления платёжного баланса стран-участниц производственной сети.",
+  },
+  {
+    name: "Всемирный банк",
+    abbr: "WB",
+    color: "#B87C4A",
+    flag: "🌐",
+    role: "Развитие и инфраструктура",
+    desc: "Гранты и кредиты на развитие производственной инфраструктуры, обучение кадров и устойчивое промышленное развитие.",
+  },
+  {
+    name: "Центральные банки Африки",
+    abbr: "CB",
+    color: "#A04A4A",
+    flag: "🏦",
+    role: "Регуляторная база",
+    desc: "Координация валютной политики, лицензирование и регуляторное сопровождение межрегиональных производственных расчётов.",
+  },
+];
+
 const CLIENTS = [
   {
     ring: "core",
@@ -292,6 +343,7 @@ export default function Index() {
           <div className="hidden md:flex items-center gap-8">
             {[
               { label: "О бренде", id: "about" },
+              { label: "Партнёры", id: "partners" },
               { label: "Регионы", id: "regions" },
               { label: "Логотипы", id: "logos" },
               { label: "Клиентура", id: "clients" },
@@ -383,6 +435,61 @@ export default function Index() {
                 <span className="font-body text-mist text-sm">{stat.label}</span>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Partners */}
+      <section id="partners" className="py-32 px-8 bg-card">
+        <div className="max-w-6xl mx-auto">
+          <div className="fade-up mb-16">
+            <p className="font-body text-xs tracking-[0.3em] text-gold mb-4">ФИНАНСОВЫЕ ПАРТНЁРЫ</p>
+            <h2 className="font-display text-5xl font-light text-sand">
+              Институциональная<br /><em className="text-gold not-italic">основа проекта</em>
+            </h2>
+            <p className="font-body text-mist mt-6 max-w-xl leading-relaxed">
+              Многоуровневое финансовое партнёрство охватывает континентальные, международные и региональные институты развития.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {PARTNERS.map((p, i) => (
+              <div
+                key={p.abbr}
+                className="logo-card p-6 fade-up"
+                style={{ transitionDelay: `${i * 0.08}s` }}
+              >
+                <div className="flex items-start gap-4 mb-4">
+                  <div
+                    className="w-12 h-12 rounded flex items-center justify-center text-xl shrink-0 font-display font-light"
+                    style={{ background: `${p.color}15`, border: `1px solid ${p.color}30`, color: p.color }}
+                  >
+                    {p.flag}
+                  </div>
+                  <div>
+                    <p className="font-body text-xs tracking-widest uppercase mb-1" style={{ color: p.color }}>{p.abbr}</p>
+                    <p className="font-display text-lg text-sand leading-tight">{p.name}</p>
+                  </div>
+                </div>
+                <div className="h-px mb-4" style={{ background: `${p.color}25` }} />
+                <p className="font-body text-xs tracking-widest uppercase mb-2" style={{ color: p.color }}>{p.role}</p>
+                <p className="font-body text-sm text-mist leading-relaxed">{p.desc}</p>
+              </div>
+            ))}
+          </div>
+
+          {/* Combined bar */}
+          <div className="mt-14 fade-up">
+            <div className="flex h-1 rounded overflow-hidden">
+              {PARTNERS.map((p) => (
+                <div key={p.abbr} className="flex-1 transition-all duration-500" style={{ background: p.color }} />
+              ))}
+            </div>
+            <div className="flex justify-between mt-3">
+              {PARTNERS.map((p) => (
+                <span key={p.abbr} className="font-body text-xs" style={{ color: p.color }}>{p.abbr}</span>
+              ))}
+            </div>
           </div>
         </div>
       </section>
