@@ -58,6 +58,41 @@ const REGIONS = [
   },
 ];
 
+const CLIENTS = [
+  {
+    ring: "core",
+    label: "Ядро",
+    color: "#C9933A",
+    r: 70,
+    segments: [
+      { icon: "🏭", title: "Тяжёлая индустрия", desc: "Горнодобывающие, металлургические и энергетические предприятия" },
+      { icon: "🚛", title: "Транспортировка", desc: "Логистические компании, автопарки, грузоперевозчики" },
+    ],
+  },
+  {
+    ring: "mid",
+    label: "Средний круг",
+    color: "#7CB87C",
+    r: 130,
+    segments: [
+      { icon: "🏗️", title: "Лёгкая индустрия", desc: "Производственные и перерабатывающие предприятия" },
+      { icon: "🏢", title: "Крупный бизнес", desc: "Корпорации и холдинги, нуждающиеся в автопарке" },
+      { icon: "🏬", title: "Средний бизнес", desc: "Региональные компании и дистрибьюторские сети" },
+    ],
+  },
+  {
+    ring: "outer",
+    label: "Внешний круг",
+    color: "#4A90B8",
+    r: 185,
+    segments: [
+      { icon: "🏛️", title: "Администрация", desc: "Государственные структуры, муниципалитеты, ведомства" },
+      { icon: "🤝", title: "Малый бизнес", desc: "Предприниматели, такси, частные перевозчики" },
+      { icon: "🌍", title: "Иностранные агенты", desc: "Международные партнёры и представители по регионам" },
+    ],
+  },
+];
+
 const VALUES = [
   { title: "Местные корни", desc: "Каждый узел строится на существующих навыках и мастерских региона" },
   { title: "Единый стандарт", desc: "Общие технические требования и контроль качества через всю цепочку" },
@@ -259,6 +294,7 @@ export default function Index() {
               { label: "О бренде", id: "about" },
               { label: "Регионы", id: "regions" },
               { label: "Логотипы", id: "logos" },
+              { label: "Клиентура", id: "clients" },
               { label: "Ценности", id: "values" },
               { label: "Маршрут", id: "roadmap" },
               { label: "Контакт", id: "contact" },
@@ -455,6 +491,89 @@ export default function Index() {
             <p className="font-body text-xs text-mist max-w-sm text-center leading-relaxed">
               Линия соединяет все пять узлов, подчёркивая путь деталей к сборке и единство голоса бренда
             </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Clients */}
+      <section id="clients" className="py-32 px-8">
+        <div className="max-w-6xl mx-auto">
+          <div className="fade-up mb-16">
+            <p className="font-body text-xs tracking-[0.3em] text-gold mb-4">КЛИЕНТУРА</p>
+            <h2 className="font-display text-5xl font-light text-sand">
+              Концентрическая<br /><em className="text-gold not-italic">стратегия охвата</em>
+            </h2>
+            <p className="font-body text-mist mt-6 max-w-xl leading-relaxed">
+              Заключение сделок с экономическими агентами во всех секторах — от тяжёлой индустрии и транспорта до администрации и малого бизнеса.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            {/* Concentric diagram */}
+            <div className="fade-up flex items-center justify-center">
+              <svg viewBox="0 0 400 400" className="w-full max-w-sm">
+                {/* Outer ring */}
+                <circle cx="200" cy="200" r="185" fill="rgba(74,144,184,0.04)" stroke="rgba(74,144,184,0.25)" strokeWidth="1" strokeDasharray="6 4" />
+                {/* Mid ring */}
+                <circle cx="200" cy="200" r="130" fill="rgba(124,184,124,0.05)" stroke="rgba(124,184,124,0.3)" strokeWidth="1" strokeDasharray="6 4" />
+                {/* Core ring */}
+                <circle cx="200" cy="200" r="70" fill="rgba(201,147,58,0.08)" stroke="rgba(201,147,58,0.5)" strokeWidth="1.5" />
+                {/* Center dot */}
+                <circle cx="200" cy="200" r="18" fill="rgba(201,147,58,0.2)" stroke="#C9933A" strokeWidth="2" />
+                <text x="200" y="196" textAnchor="middle" fill="#C9933A" fontSize="9" fontFamily="IBM Plex Sans" letterSpacing="1">AFRIC 4</text>
+                <text x="200" y="208" textAnchor="middle" fill="#C9933A" fontSize="9" fontFamily="IBM Plex Sans" letterSpacing="1">MATIC</text>
+
+                {/* Core labels */}
+                <text x="200" y="142" textAnchor="middle" fill="#C9933A" fontSize="8" fontFamily="IBM Plex Sans">🏭 Тяжёлая индустрия</text>
+                <text x="200" y="256" textAnchor="middle" fill="#C9933A" fontSize="8" fontFamily="IBM Plex Sans">🚛 Транспортировка</text>
+
+                {/* Mid ring labels */}
+                <text x="100" y="178" textAnchor="middle" fill="#7CB87C" fontSize="8" fontFamily="IBM Plex Sans">🏗️ Лёгкая индустрия</text>
+                <text x="300" y="178" textAnchor="middle" fill="#7CB87C" fontSize="8" fontFamily="IBM Plex Sans">🏢 Крупный бизнес</text>
+                <text x="200" y="300" textAnchor="middle" fill="#7CB87C" fontSize="8" fontFamily="IBM Plex Sans">🏬 Средний бизнес</text>
+
+                {/* Outer ring labels */}
+                <text x="90" y="110" textAnchor="middle" fill="#4A90B8" fontSize="8" fontFamily="IBM Plex Sans">🏛️ Администрация</text>
+                <text x="310" y="110" textAnchor="middle" fill="#4A90B8" fontSize="8" fontFamily="IBM Plex Sans">🤝 Малый бизнес</text>
+                <text x="200" y="370" textAnchor="middle" fill="#4A90B8" fontSize="8" fontFamily="IBM Plex Sans">🌍 Иностранные агенты</text>
+
+                {/* Ring labels */}
+                <text x="16" y="200" textAnchor="middle" fill="rgba(201,147,58,0.5)" fontSize="7" fontFamily="IBM Plex Sans" transform="rotate(-90, 16, 200)">ЯДРО</text>
+                <text x="72" y="200" textAnchor="middle" fill="rgba(124,184,124,0.5)" fontSize="7" fontFamily="IBM Plex Sans" transform="rotate(-90, 72, 200)">СРЕДНИЙ КРУГ</text>
+                <text x="18" y="60" textAnchor="start" fill="rgba(74,144,184,0.5)" fontSize="7" fontFamily="IBM Plex Sans">ВНЕШНИЙ КРУГ</text>
+              </svg>
+            </div>
+
+            {/* Segments list */}
+            <div className="space-y-3 fade-up" style={{ transitionDelay: "0.2s" }}>
+              {CLIENTS.map((ring) => (
+                <div key={ring.ring}>
+                  <p className="font-body text-xs tracking-widest uppercase mb-3 mt-6 first:mt-0" style={{ color: ring.color }}>
+                    {ring.label}
+                  </p>
+                  {ring.segments.map((seg, i) => (
+                    <div
+                      key={i}
+                      className="flex items-start gap-4 p-4 border border-border hover:border-opacity-50 transition-all duration-300 mb-2"
+                      style={{ borderLeftColor: ring.color, borderLeftWidth: "2px" }}
+                    >
+                      <span className="text-xl shrink-0 mt-0.5">{seg.icon}</span>
+                      <div>
+                        <p className="font-body text-sm text-sand font-medium">{seg.title}</p>
+                        <p className="font-body text-xs text-mist mt-0.5 leading-relaxed">{seg.desc}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              ))}
+
+              <div className="mt-8 p-5 border border-gold/20 bg-gold/5">
+                <p className="font-body text-xs tracking-widest text-gold uppercase mb-2">CRM-стратегия</p>
+                <p className="font-body text-sm text-mist leading-relaxed">
+                  Концентрическая модель охвата: от ключевых индустриальных партнёров в ядре — к широкой сети агентов во внешнем круге. Каждый сегмент получает адаптированное коммерческое предложение.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
