@@ -74,15 +74,43 @@ const ROADMAP = [
   },
   {
     period: "2025–2027",
-    phase: "Развитие",
+    phase: "Анализ и развитие",
     status: "active",
     items: ["Анализ рынка и партнёрских возможностей", "Поиск производственных партнёров", "Разработка стандартов качества", "Пилотные соглашения"],
   },
   {
-    period: "2027–2030",
-    phase: "Запуск",
+    period: "2026–2027",
+    phase: "Кадры",
     status: "future",
-    items: ["Запуск производства в Центральной Африке", "Подключение Севера и Запада", "Выход на рынки Востока и Юга", "Первые автомобили под единым брендом"],
+    items: [
+      "Идентификация инженеров через биржевые центры",
+      "Привлечение диаспоры и иностранных специалистов",
+      "Интеграция местных инженерных кадров",
+      "Формирование технических команд по регионам",
+    ],
+  },
+  {
+    period: "2026–2028",
+    phase: "Партнёрства",
+    status: "future",
+    items: [
+      "Поиск и идентификация партнёров из РФ",
+      "Привлечение партнёров из других заинтересованных стран",
+      "Межгосударственные производственные соглашения",
+      "Трансфер технологий и компетенций",
+    ],
+  },
+  {
+    period: "2028–2035",
+    phase: "Производство",
+    status: "future",
+    items: [
+      "Запуск линейки грузовых автомобилей",
+      "Запуск линейки пассажирских автомобилей",
+      "Запуск линейки престижных автомобилей",
+      "5 моделей по каждой из 5 марок регионов",
+      "Полный охват континентального рынка",
+    ],
   },
 ];
 
@@ -458,7 +486,7 @@ export default function Index() {
           <div className="fade-up mb-16">
             <p className="font-body text-xs tracking-[0.3em] text-gold mb-4">ДОРОЖНАЯ КАРТА</p>
             <h2 className="font-display text-5xl font-light text-sand">
-              Маршрут к<br /><em className="text-gold not-italic">2030 году</em>
+              Маршрут к<br /><em className="text-gold not-italic">2035 году</em>
             </h2>
           </div>
 
@@ -537,7 +565,7 @@ export default function Index() {
             </div>
             <span className="font-display text-base tracking-widest text-sand">AFRIC 4 <span className="text-gold">MATIC</span></span>
           </div>
-          <p className="font-body text-xs text-mist tracking-widest">AFRIC 4 MATIC · CONTINENTAL AUTOMOTIVE NETWORK · 2025–2030</p>
+          <p className="font-body text-xs text-mist tracking-widest">AFRIC 4 MATIC · CONTINENTAL AUTOMOTIVE NETWORK · 2025–2035</p>
           <p className="font-body text-xs text-mist/50">От локальных инициатив к континентальной сети</p>
         </div>
       </footer>
